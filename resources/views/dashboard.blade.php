@@ -49,6 +49,12 @@
                  <h5 class="text-center">Hello, {{Auth::user()->name}}. Welcome to our website.</h5>
 
                  <a href="{{ route('user.details',Crypt::encryptString('59')) }}" class="btn btn-primary">{{ Auth::user()->name }} details</a>
+                 <br>
+                 <br>
+                 <br>
+                 
+                 <a href="{{ route('class.index') }}" class="btn btn-primary"> Classes</a>
+                 <a href="{{ route('student.index') }}" class="btn btn-danger"> Students</a>
                 <br>
                 <br>
                 <br>

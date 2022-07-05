@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\mycontroler;
+use App\Http\Controllers\admin\classController;
+use App\Http\Controllers\admin\studentsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,6 +64,18 @@ Route::get('/laravel', function () {
 
 
 Route::post('/user', [mycontroler::class, 'hasing'])->name('user.hashing');
+
+
+Route::get('/Class', [classController::class, 'index'])->name('class.index');
+Route::get('/Students', [studentsController::class, 'index'])->name('student.index');
+
+
+Route::get('/Store-class', [classController::class, 'store'])->name('class.store');
+
+Route::get('/Delete-class/{id}', [classController::class, 'delete'])->name('class.delete');
+
+
+Route::post('/Add-class', [classController::class, 'create'])->name('classes.create');
 
 
 
