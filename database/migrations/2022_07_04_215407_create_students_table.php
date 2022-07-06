@@ -20,8 +20,6 @@ return new class extends Migration
             $table->integer('sid')->nullable();
             $table->string('email')->nullable();
             $table->integer('phone')->nullable();
-            $table->string('address')->nullable();
-            $table->string('gender')->nullable();
             $table->timestamps();
             $table->foreign('class_id')->references('id')->on('classes')->onDelete('cascade');
         });

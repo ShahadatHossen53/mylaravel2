@@ -54,7 +54,7 @@
                  <br>
                  
                  <a href="{{ route('class.index') }}" class="btn btn-primary"> Classes</a>
-                 <a href="{{ route('student.index') }}" class="btn btn-danger"> Students</a>
+                 <a href="{{ route('students.index') }}" class="btn btn-danger"> Students</a>
                 <br>
                 <br>
                 <br>
