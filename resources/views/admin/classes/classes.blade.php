@@ -42,7 +42,7 @@
                         @foreach ($classes as $key=>$row)
                             <tr>
                                 <td>{{ ++$key }}</td>
-                                <td>{{ $row->class_id }}</td>
+                                <td>{{ $row->class_name }}</td>
                                 <td>
                                     <a href="{{ route('class.edit', $row->id) }}" class="btn btn-sm btn-info">Edit</a>
                                     <a href="{{ route('class.delete', $row->id) }}" class="btn btn-sm btn-danger">Delete</a>
@@ -52,7 +52,9 @@
                         @endforeach
                     </tbody>
                 </table>
+                {{ $classes->links() }}
             </div>
+            
             <div class="col-md-2"></div>
         </div>
     </div>

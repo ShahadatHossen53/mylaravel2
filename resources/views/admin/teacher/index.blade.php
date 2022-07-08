@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Student List</title>
+    <title>Teacher List</title>
   </head>
   <body>
 
@@ -21,11 +21,11 @@
             <div class="col-md-4"></div>
             <div class="col-md-4">
                 
-                <a href="{{ route('students.create') }}" class="btn btn-sm m-4 btn-success" >Add Student</a>
+                <a href="{{ route('teachers.create') }}" class="btn btn-sm m-4 btn-success" >Add Teacher</a>
             </div>
         </div>
         <div class="row">
-            <h2 class="text-center">The tabel of students</h2>
+            <h2 class="text-center">The tabel of teacher</h2>
             <div class="col-md-2"></div>
             <div class="col-md-8">
                 <div class="row">
@@ -40,26 +40,26 @@
                 <table class="table table-responsive text-center">
                     <thead>
                         <tr>
-                            <td>SID</td>
-                            <td>Student Name</td>
-                            <td>Class</td>
+                            <td>SL No</td>
+                            <td>Teacher Name</td>
                             <td>email</td>
+                            <td>Address</td>
                             <td>Edit</td>
                             <td>Delete</td>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($students as $key=>$row)
+                        @foreach ($teachers as $key=>$row)
                             <tr>
-                                <td>{{ $row->sid }}</td>
+                                <td>{{ $row->id }}</td>
                                 <td>{{ $row->name }}</td>
-                                <td>{{ $row->class_name }}</td>
+                                <td>{{ $row->address }}</td>
                                 <td>{{ $row->email }}</td>
                                 <td>
-                                    <a href="{{ route('students.edit', $row->id) }}" class="btn btn-sm btn-info">Edit</a>
+                                    <a href="{{ route('teachers.edit', $row->id) }}" class="btn btn-sm btn-info">Edit</a>
                                 </td>
                                 <td>
-                                    <form action="{{ route('students.destroy', $row->id) }}" method="post">
+                                    <form action="{{ route('teachers.destroy', $row->id) }}" method="post">
                                         @csrf
                                         <input type="hidden" name="_method" value="DELETE">
                                         <button type="submit" class="btn btn-sm btn-danger">Delete</button>
@@ -70,6 +70,7 @@
                         @endforeach
                     </tbody>
                 </table>
+                {{ $teachers->links() }}
             </div>
             <div class="col-md-2"></div>
         </div>

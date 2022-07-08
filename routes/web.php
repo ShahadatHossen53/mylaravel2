@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\mycontroler;
 use App\Http\Controllers\admin\classController;
 use App\Http\Controllers\admin\studentController;
+use App\Http\Controllers\admin\teacherController;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,6 +80,10 @@ Route::post('/Update-class', [classController::class, 'update'])->name('class.up
 //__Student Route__//
 
 Route::resource('students', studentController::class);
+
+//__Teacher Route__//
+
+Route::resource('teachers', teacherController::class);
 
 
 require __DIR__.'/auth.php';

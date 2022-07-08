@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Student;
 use DB;
 
 class studentController extends Controller
@@ -16,7 +17,10 @@ class studentController extends Controller
     public function index()
     {
 
-        $students = DB::table('students')->get();
+        // $students = DB::table('students')->get();
+        //$students = DB::table('students')->join('classes', 'students.class_id', 'classes.id')->get();
+
+        $students = Student::all();
         
         return view('admin/student/index', compact('students'));
     }
